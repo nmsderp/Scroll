@@ -3,6 +3,7 @@
     import { onMount } from 'svelte';
 
     let loves = 0;
+    let favorites = 0;
     let id = null;
     let title = ""; 
     let desc = ""; 
@@ -17,6 +18,15 @@
             const response = await fetch(`https://corsproxy.io/?https://api.scratch.mit.edu/projects/${projectId}`);
             const datalove = await response.json();
             loves = datalove.stats.loves;
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
+    async function fetchStars(projectId) {
+        try {
+            const response = await fetch(`https://corsproxy.io/?https://api.scratch.mit.edu/projects/${projectId}`);
+            const datafav = await response.json();
+            favorites = datafav.stats.favorites;
         } catch (error) {
             console.error("Error fetching data:", error);
         }
@@ -47,6 +57,7 @@
         if (id) {
             await Promise.all([
                 fetchLoves(id),
+                fetchStars(id),
                 fetchName(id),
                 fetchDesc(id)
             ]);
@@ -97,6 +108,7 @@
     {#if id}
         <iframe src={"https://turbowarp.org/embed/#" + id} title="Project Embed" frameborder="0" allowtransparency="true" allowfullscreen style="width: 100%; min-height: 500px;"></iframe>
         <p>Number of loves: {loves}</p>
+        <p>Number of favorites: {favorites}</p>
         <p>{@html desc}</p>
     {:else}
         <p>No ID parameter found.</p>
