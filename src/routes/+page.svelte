@@ -8,7 +8,6 @@
     const links = [
       { text: 'Home', url: '/' },
       { text: 'About', url: '/about' },
-      { text: 'Contact', url: '/contact' }
     ];
   </script>
     

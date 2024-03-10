@@ -29,13 +29,12 @@
   }
 
   function handleProjectClick(projectId) {
-    window.location.href = `https://turbowarp.org/#${projectId}`;
+    window.location.href = `/view?id=${projectId}`;
   }
 
   const links = [
     { text: 'Home', url: '/' },
     { text: 'About', url: '/about' },
-    { text: 'Contact', url: '/contact' }
   ];
 </script>
 
@@ -63,7 +62,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-items: center;
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px;
     width: 100%;
   }
 
@@ -73,7 +72,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%;
-    max-width: 300px; /* Adjust as needed */
+    max-width: 300px;
     cursor: pointer;
   }
 
@@ -128,7 +127,6 @@
       <div class="project-card" on:click={() => handleProjectClick(project.id)}>
         <img class="project-thumbnail" src={project.image} alt="Project Thumbnail" />
         <div class="project-title">{project.title}</div>
-        <!-- Add more project metadata here if needed -->
       </div>
     {/each}
   </div>
