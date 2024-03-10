@@ -1,10 +1,20 @@
 <script>
+    import Navbar from '$lib/components/Navbar.svelte';
+  
     function exploreProjects() {
       window.location.href = '/projects';
     }
-  </script>
   
+    const links = [
+      { text: 'Home', url: '/' },
+      { text: 'About', url: '/about' },
+      { text: 'Contact', url: '/contact' }
+    ];
+  </script>
+    
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  
     .container {
       display: flex;
       flex-direction: column;
@@ -13,7 +23,7 @@
       height: 100vh;
       background-color: #855CD6;
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
   
     .title {
@@ -48,9 +58,11 @@
       font-weight: bold;
     }
   </style>
-  
+    
+  <Navbar {links} />
   <div class="container">
     <h1 class="title">Welcome to Scroll!</h1>
+    <p>A faster Scratch frontend.</p>
     <button class="button" on:click={exploreProjects}>Explore Projects</button>
     <div class="footer">
       Created with ❤️ by <a href="https://github.com/nmsderp" target="_blank">nmsderp</a>
