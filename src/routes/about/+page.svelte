@@ -56,13 +56,25 @@
       text-decoration: none;
       font-weight: bold;
     }
+    .github-link {
+        color: #000000; /* Dark blue color */
+        text-decoration: none; /* Remove underline */
+    }
+
+    .github-link:hover {
+        text-decoration: underline; /* Underline on hover */
+    }
   </style>
     
   <Navbar {links} />
   <div class="container">
-    <h1 class="title">Welcome to Scroll!</h1>
-    <p style="font-style: italic;">Note: Scroll is currently in Alpha stages, so it is not finished.</p>
-    <p>A simple Scratch frontend.</p>
+    <h1 class="title">About Scroll</h1>
+    <p>Scroll is a simple Scratch frontend that runs projects via TurboWarp.</p>
+    <h1 class="title">What is a Frontend?</h1>
+    <p>A frontend is a website or piece of software that interacts with a server to show data.</p>
+    <h1 class="title">Can I Contribute?</h1>
+    <p>Yes! You can also contribute to us via our <a href="https://github.com/nmsderp/Scroll" class="github-link">GitHub repo</a></p>
+
     <button class="button" on:click={exploreProjects}>Explore Projects</button>
     <div class="footer">
       Created with ❤️ by <a href="https://github.com/nmsderp" target="_blank">nmsderp</a>
