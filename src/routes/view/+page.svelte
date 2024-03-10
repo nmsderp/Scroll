@@ -1,7 +1,7 @@
 <script>
     import Navbar from '$lib/components/Navbar.svelte';
     import { onMount } from 'svelte';
-    
+
     let loves = 0;
     let id = null;
     let title = ""; 
@@ -36,7 +36,7 @@
         try {
             const response = await fetch(`https://corsproxy.io/?https://api.scratch.mit.edu/projects/${projectId}`);
             const datadesc = await response.json();
-            desc = datadesc.description.replace(/\n/g, '<br>');
+            desc = datadesc.description.replace(/https:\/\/scratch\.mit\.edu\/projects\/(\d+)/g, '<a href="https://scroll3.vercel.app/view?id=$1">https://scratch.mit.edu/projects/$1</a>').replace(/\n/g, '<br>');
         } catch (error) {
             console.error("Error fetching data:", error);
         }
