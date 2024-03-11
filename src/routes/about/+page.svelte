@@ -1,14 +1,10 @@
 <script>
-    import Navbar from '$lib/components/Navbar.svelte';
+  import { goto } from "$app/navigation";
   
     function exploreProjects() {
-      window.location.href = '/projects';
+      goto('/projects');
     }
   
-    const links = [
-      { text: 'Home', url: '/' },
-      { text: 'About', url: '/about' },
-    ];
   </script>
     
   <style>
@@ -66,7 +62,6 @@
     }
   </style>
     
-  <Navbar {links} />
   <div class="container">
     <h1 class="title">About Scroll</h1>
     <p>Scroll is a simple Scratch frontend that runs projects via TurboWarp.</p>

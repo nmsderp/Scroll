@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
-  import Navbar from '$lib/components/Navbar.svelte';
 
   let projects = writable([]);
   let filter = 'all'; // Default filter value
@@ -36,11 +35,6 @@
   function handleProjectClick(projectId) {
     window.location.href = `/view?id=${projectId}`;
   }
-
-  const links = [
-    { text: 'Home', url: '/' },
-    { text: 'About', url: '/about' },
-  ];
 </script>
 
 <style>
@@ -166,8 +160,6 @@
     font-size: 1.5rem;
   }
 </style>
-
-<Navbar {links} />
 
 <div class="container">
   <div class="title">Explore Projects</div>

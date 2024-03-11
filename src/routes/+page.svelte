@@ -1,14 +1,10 @@
 <script>
-    import Navbar from '$lib/components/Navbar.svelte';
+  import { goto } from "$app/navigation";
   
     function exploreProjects() {
-      window.location.href = '/projects';
+      goto('/projects');
     }
   
-    const links = [
-      { text: 'Home', url: '/' },
-      { text: 'About', url: '/about' },
-    ];
   </script>
     
   <style>
@@ -58,7 +54,6 @@
     }
   </style>
     
-  <Navbar {links} />
   <div class="container">
     <h1 class="title">Welcome to Scroll!</h1>
     <p style="font-style: italic;">Note: Scroll is currently in Alpha stages, so it is not finished.</p>

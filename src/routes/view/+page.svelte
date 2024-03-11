@@ -1,5 +1,4 @@
 <script>
-    import Navbar from '$lib/components/Navbar.svelte';
     import { onMount } from 'svelte';
 
     let loves = 0;
@@ -64,10 +63,6 @@
         }
     });
     
-    const links = [
-      { text: 'Home', url: '/' },
-      { text: 'About', url: '/about' },
-    ];
 </script>
     
 <style>
@@ -102,7 +97,6 @@
     }
 </style>
     
-<Navbar {links} />
 <div class="container">
     <h1 class="title">{title}</h1>
     {#if id}
